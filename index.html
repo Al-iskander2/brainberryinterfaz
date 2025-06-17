@@ -7,28 +7,24 @@
   <style>
     /* Estilo general blanco y negro */
     body { margin: 0; font-family: Arial, sans-serif; color: #000; background: #fff; }
-    nav { display: flex; justify-content: center; background: #000; position: sticky; top: 0; z-index: 100; }
+    nav { display: flex; justify-content: center; background: #000; position: sticky; top: 0; }
     nav a { color: #fff; padding: 1rem; text-decoration: none; font-weight: bold; }
     section { padding: 2em; max-width: 800px; margin: auto; }
     h2 { border-bottom: 2px solid #000; padding-bottom: 0.5em; }
     .video-container { display: flex; flex-direction: column; gap: 1em; }
     .video-container iframe { width: 100%; height: 315px; }
     footer { text-align: center; padding: 1em; background: #f4f4f4; color: #000; }
-    /* Dock styles */
-    #dock { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: center; align-items: center; height: 68px; z-index: 100; }
+    /* Estilos para el Dock */
+    #dock { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: center; align-items: center; height: 68px; }
     .dock-item { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 1rem; cursor: pointer; transition: transform 0.2s ease; }
     .dock-item svg { fill: #fff; }
     .dock-label { font-size: 0.75rem; color: #fff; margin-top: 4px; }
-    /* Separator container */
-    .separator { width: 100%; height: 20px; overflow: hidden; }
   </style>
   <!-- React y Babel para JSX en la página estática -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/react-icons@4.3.1/dist/react-icons.umd.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <!-- Asume MetallicPaint.js y sus dependencias en el mismo repo -->
-  <script type="module" src="./MetallicPaint.js"></script>
 </head>
 <body>
   <nav>
@@ -44,61 +40,68 @@
     <h2>Bienvenido a Brain Inter Facez</h2>
     <p>Soy Alejandro Rangel, desarrollador apasionado por la intersección entre neurociencia y tecnología. Mi misión es mejorar el mundo mediante soluciones innovadoras que fusionen mente y máquina.</p>
   </section>
-  <div class="separator" data-params='{}'></div>
 
   <section id="trayectoria">
     <h2>Mi Trayectoria</h2>
     <p>Tras completar mi Maestría en Filosofía, descubrí mi verdadera pasión por la tecnología. Al mudarme a Irlanda, me sumergí en el potencial de la cibernética cerebral y decidí fundar Brain Inter Facez para aplicar mis conocimientos en neurociencia y tecnología.</p>
   </section>
-  <div class="separator" data-params='{}'></div>
 
-  <section id="videos">
+
+
+<section id="tecnologia">
+  <h2>Tecnología en Desarrollo</h2>
+  <p>Actualmente estamos desarrollando nuevos sistemas para trabajar con el cerebro.</p>
+  
+  <div class="tech-gallery" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+    
+    <figure style="max-width: 250px; text-align: center;">
+      <img src="images/ilearn.png" alt="iLearn" style="width: 100%; height: auto; border: 1px solid #000;" />
+      <figcaption>iLearn</figcaption>
+    </figure>
+    
+    <figure style="max-width: 250px; text-align: center;">
+      <img src="images/prototype1.png" alt="Prototipo 1" style="width: 100%; height: auto; border: 1px solid #000;" />
+      <figcaption>Prototipe 1</figcaption>
+    </figure>
+    
+    <figure style="max-width: 250px; text-align: center;">
+      <img src="images/prototype2.png" alt="Prototipo 2" style="width: 100%; height: auto; border: 1px solid #000;" />
+      <figcaption>Prototipe 2</figcaption>
+    </figure>
+    
+  </div>
+</section>
+
+  </section>
+
+    <section id="videos">
     <h2>Videos Destacados</h2>
     <div class="video-container">
       <div>
-        <h3>Proceso y Filosofía</h3>
+        <h3>Proceso de Machine Learning</h3>
         <iframe src="https://www.youtube.com/embed/zS0e6jan25s" frameborder="0" allowfullscreen></iframe>
       </div>
       <div>
-        <h3>Demostración de Prototipo</h3>
+        <h3>Análisis EEG Avanzado</h3>
         <iframe src="https://www.youtube.com/embed/XUQrZKiacMM" frameborder="0" allowfullscreen></iframe>
       </div>
       <div>
-        <h3>Análisis EEG Avanzado</h3>
+        <h3>Summits de tecnologia </h3>
         <iframe src="https://www.youtube.com/embed/12F4uXnWi2w?start=6" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </section>
-  <div class="separator" data-params='{}'></div>
-
-  <section id="tecnologia">
-    <h2>Tecnología en Desarrollo</h2>
-    <p>Actualmente estamos desarrollando nuevos sistemas para trabajar con el cerebro.</p>
-    <div class="tech-gallery" style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
-      <figure style="max-width:250px; text-align:center;">
-        <img src="images/ilearn.png" alt="iLearn" style="width:100%; border:1px solid #000;"/>
-        <figcaption>iLearn</figcaption>
-      </figure>
-      <figure style="max-width:250px; text-align:center;">
-        <img src="images/prototype1.png" alt="Prototipo 1" style="width:100%; border:1px solid #000;"/>
-        <figcaption>Prototipe 1</figcaption>
-      </figure>
-      <figure style="max-width:250px; text-align:center;">
-        <img src="images/prototype2.png" alt="Prototipo 2" style="width:100%; border:1px solid #000;"/>
-        <figcaption>Prototipe 2</figcaption>
-      </figure>
-    </div>
-  </section>
-  <div class="separator" data-params='{}'></div>
-
+  
   <section id="vision">
     <h2>Visión de Futuro</h2>
     <p>Creemos en un futuro donde la neurotecnología potencie el aprendizaje humano, personalizando la educación y mejorando la calidad de vida de las personas.</p>
   </section>
-  <div class="separator" data-params='{}'></div>
 
   <section id="contacto">
     <h2>Contacto</h2>
+    <p>Puedes contactarme en <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank">LinkedIn</a>.</p>
+    <p>Puedes contactarme en <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank">LinkedIn</a>.</p>
+    <p>Puedes contactarme en <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank">LinkedIn</a>.</p>
     <p>Puedes contactarme en <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank">LinkedIn</a>.</p>
   </section>
 
@@ -106,54 +109,25 @@
     <p>&copy; 2025 Brain Inter Facez - Alejandro Rangel</p>
   </footer>
 
-  <!-- Montaje de React: Dock y Separators -->
-  <div id="dock"></div>
-  <!-- No hace falta un root extra para separators al usar múltiple mounts -->
+  <!-- Punto de montaje para el Dock -->
+  <div id="root"></div>
+
+  <!-- Script JSX para el Dock -->
   <script type="text/babel">
     const { VscHome, VscArchive, VscAccount, VscSettingsGear } = ReactIcons;
-    const { MetallicPaint, parseLogoImage } = window;
 
-    // Componente Separator metálico
-    function MetallicSeparator({ params }) {
-      const [imageData, setImageData] = React.useState(null);
-      // SVG rectángulo negro como máscara
-      const svg = `<svg width="600" height="20" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="600" height="12" fill="black"/></svg>`;
-
-      React.useEffect(() => {
-        async function init() {
-          const blob = new Blob([svg], { type: 'image/svg+xml' });
-          const file = new File([blob], 'sep.svg', { type: blob.type });
-          const parsed = await parseLogoImage(file);
-          setImageData(parsed.imageData);
-        }
-        init();
-      }, []);
-
-      return imageData ? (
-        <MetallicPaint
-          imageData={imageData}
-          params={{ edge:2, patternBlur:0.005, patternScale:2, refraction:0.015, speed:0.3, liquid:0.07, ...params }}
-        />
-      ) : null;
-    }
-
-    // Montar todos los separators
-    document.querySelectorAll('.separator').forEach(div => {
-      const params = JSON.parse(div.getAttribute('data-params'));
-      ReactDOM.createRoot(div).render(<MetallicSeparator params={params} />);
-    });
-
-    // Dock
     function Dock({ items, panelHeight, baseItemSize, magnification }) {
       return (
         <div id="dock" style={{ height: panelHeight }}>
-          {items.map((item,i) => (
-            <div key={i}
+          {items.map((item, idx) => (
+            <div
+              key={idx}
               className="dock-item"
               style={{ width: baseItemSize, height: baseItemSize }}
               onClick={item.onClick}
-              onMouseEnter={e => e.currentTarget.style.transform = `scale(${magnification/baseItemSize})`}
-              onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
+              onMouseEnter={e => (e.currentTarget.style.transform = scale(${magnification / baseItemSize}))}
+              onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+            >
               {item.icon}
               <div className="dock-label">{item.label}</div>
             </div>
@@ -162,17 +136,17 @@
       );
     }
 
-    // Items del Dock
-    const dockItems = [
-      { icon:<VscHome size={24}/>, label:'Inicio', onClick:()=>window.location.href='#inicio' },
-      { icon:<VscArchive size={24}/>, label:'Trayectoria', onClick:()=>window.location.href='#trayectoria' },
-      { icon:<VscAccount size={24}/>, label:'Videos', onClick:()=>window.location.href='#videos' },
-      { icon:<VscSettingsGear size={24}/>, label:'Tecnología', onClick:()=>window.location.href='#tecnologia' }
-    ];
+    function App() {
+      const items = [
+        { icon: <VscHome size={24} />, label: 'Inicio', onClick: () => window.location.href = '#inicio' },
+        { icon: <VscArchive size={24} />, label: 'Trayectoria', onClick: () => window.location.href = '#trayectoria' },
+        { icon: <VscAccount size={24} />, label: 'Videos', onClick: () => window.location.href = '#videos' },
+        { icon: <VscSettingsGear size={24} />, label: 'Tecnología', onClick: () => window.location.href = '#tecnologia' }
+      ];
+      return <Dock items={items} panelHeight={68} baseItemSize={50} magnification={1.4} />;
+    }
 
-    ReactDOM.createRoot(document.getElementById('dock')).render(
-      <Dock items={dockItems} panelHeight={68} baseItemSize={50} magnification={1.4} />
-    );
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
   </script>
 </body>
 </html>
