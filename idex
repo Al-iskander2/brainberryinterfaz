@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Inter Facez - Alejandro Rangel</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    nav { background: #333; color: #fff; padding: 1em; position: sticky; top: 0; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+    nav li { margin-right: 1em; }
+    nav a { color: #fff; text-decoration: none; }
+    section { padding: 2em; max-width: 800px; margin: auto; }
+    h2 { border-bottom: 2px solid #eee; padding-bottom: 0.5em; }
+    .video-container { display: flex; flex-direction: column; gap: 1em; }
+    .video-container iframe { width: 100%; height: 315px; }
+    footer { text-align: center; padding: 1em; background: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#trayectoria">Mi Trayectoria</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#tecnologia">Tecnología en Desarrollo</a></li>
+      <li><a href="#vision">Visión</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenido a Brain Inter Facez</h2>
+    <p>Soy Alejandro Rangel, desarrollador apasionado por la intersección entre neurociencia y tecnología. Mi misión es mejorar el mundo mediante soluciones innovadoras que fusionen mente y máquina.</p>
+  </section>
+
+  <section id="trayectoria">
+    <h2>Mi Trayectoria</h2>
+    <p>Tras completar mi Maestría en Filosofía, descubrí mi verdadera pasión por la tecnología. Al mudarme a Irlanda, me sumergí en el potencial de la cibernética cerebral y decidí fundar Brain Inter Facez para aplicar mis conocimientos en neurociencia y tecnología.</p>
+  </section>
+
+  <section id="videos">
+    <h2>Videos Destacados</h2>
+    <div class="video-container">
+      <div>
+        <h3>Proceso y Filosofía</h3>
+        <iframe src="https://www.youtube.com/embed/zS0e6jan25s" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h3>Demostración de Prototipo</h3>
+        <iframe src="https://www.youtube.com/embed/XUQrZKiacMM" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h3>Análisis EEG Avanzado</h3>
+        <iframe src="https://www.youtube.com/embed/12F4uXnWi2w?start=6" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="tecnologia">
+    <h2>Tecnología en Desarrollo</h2>
+    <p>Actualmente estamos desarrollando un sistema de diagnóstico EEG que analiza 5 bandas cerebrales para detectar 20 padecimientos del aprendizaje y generar perfiles neurológicos personalizados.</p>
+  </section>
+
+  <section id="vision">
+    <h2>Visión de Futuro</h2>
+    <p>Creemos en un futuro donde la neurotecnología potencie el aprendizaje humano, personalizando la educación y mejorando la calidad de vida de las personas.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes contactarme en <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/">LinkedIn</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Brain Inter Facez - Alejandro Rangel</p>
+  </footer>
+</body>
+</html>
