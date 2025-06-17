@@ -5,28 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brain Inter Facez - Alejandro Rangel</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-    nav { background: #333; color: #fff; padding: 1em; position: sticky; top: 0; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
-    nav li { margin-right: 1em; }
-    nav a { color: #fff; text-decoration: none; }
+    /* Estilo general blanco y negro */
+    body { margin: 0; font-family: Arial, sans-serif; color: #000; background: #fff; }
+    nav { display: flex; justify-content: center; background: #000; position: sticky; top: 0; }
+    nav a { color: #fff; padding: 1rem; text-decoration: none; font-weight: bold; }
     section { padding: 2em; max-width: 800px; margin: auto; }
-    h2 { border-bottom: 2px solid #eee; padding-bottom: 0.5em; }
+    h2 { border-bottom: 2px solid #000; padding-bottom: 0.5em; }
     .video-container { display: flex; flex-direction: column; gap: 1em; }
     .video-container iframe { width: 100%; height: 315px; }
-    footer { text-align: center; padding: 1em; background: #f4f4f4; }
+    footer { text-align: center; padding: 1em; background: #f4f4f4; color: #000; }
+    /* Estilos para el Dock */
+    #dock { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: center; align-items: center; height: 68px; }
+    .dock-item { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 1rem; cursor: pointer; transition: transform 0.2s ease; }
+    .dock-item svg { fill: #fff; }
+    .dock-label { font-size: 0.75rem; color: #fff; margin-top: 4px; }
   </style>
+  <!-- React y Babel para JSX en la página estática -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/react-icons@4.3.1/dist/react-icons.umd.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
   <nav>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#trayectoria">Mi Trayectoria</a></li>
-      <li><a href="#videos">Videos</a></li>
-      <li><a href="#tecnologia">Tecnología en Desarrollo</a></li>
-      <li><a href="#vision">Visión</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
+    <a href="#inicio">Inicio</a>
+    <a href="#trayectoria">Trayectoria</a>
+    <a href="#videos">Videos</a>
+    <a href="#tecnologia">Tecnología</a>
+    <a href="#vision">Visión</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 
   <section id="inicio">
@@ -69,11 +76,51 @@
 
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>Puedes contactarme en <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/">LinkedIn</a>.</p>
+    <p>Puedes contactarme en <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank">LinkedIn</a>.</p>
   </section>
 
   <footer>
     <p>&copy; 2025 Brain Inter Facez - Alejandro Rangel</p>
   </footer>
+
+  <!-- Punto de montaje para el Dock -->
+  <div id="root"></div>
+
+  <!-- Script JSX para el Dock -->
+  <script type="text/babel">
+    const { VscHome, VscArchive, VscAccount, VscSettingsGear } = ReactIcons;
+
+    function Dock({ items, panelHeight, baseItemSize, magnification }) {
+      return (
+        <div id="dock" style={{ height: panelHeight }}>
+          {items.map((item, idx) => (
+            <div
+              key={idx}
+              className="dock-item"
+              style={{ width: baseItemSize, height: baseItemSize }}
+              onClick={item.onClick}
+              onMouseEnter={e => (e.currentTarget.style.transform = `scale(${magnification / baseItemSize})`)}
+              onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+            >
+              {item.icon}
+              <div className="dock-label">{item.label}</div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    function App() {
+      const items = [
+        { icon: <VscHome size={24} />, label: 'Inicio', onClick: () => window.location.href = '#inicio' },
+        { icon: <VscArchive size={24} />, label: 'Trayectoria', onClick: () => window.location.href = '#trayectoria' },
+        { icon: <VscAccount size={24} />, label: 'Videos', onClick: () => window.location.href = '#videos' },
+        { icon: <VscSettingsGear size={24} />, label: 'Tecnología', onClick: () => window.location.href = '#tecnologia' }
+      ];
+      return <Dock items={items} panelHeight={68} baseItemSize={50} magnification={1.4} />;
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
 </body>
 </html>
