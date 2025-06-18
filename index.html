@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brain Inter Facez - Alejandro Rangel</title>
   <style>
-    /* Estilo general blanco y negro */
+    /* General black and white styling */
     body { margin: 0; font-family: Arial, sans-serif; color: #000; background: #fff; }
     nav { display: flex; justify-content: center; background: #000; position: sticky; top: 0; }
     nav a { color: #fff; padding: 1rem; text-decoration: none; font-weight: bold; }
@@ -14,13 +14,13 @@
     .video-container { display: flex; flex-direction: column; gap: 1em; }
     .video-container iframe { width: 100%; height: 315px; }
     footer { text-align: center; padding: 1em; background: #f4f4f4; color: #000; }
-    /* Estilos para el Dock */
+    /* Dock styling */
     #dock { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: center; align-items: center; height: 68px; }
     .dock-item { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 1rem; cursor: pointer; transition: transform 0.2s ease; }
     .dock-item svg { fill: #fff; }
     .dock-label { font-size: 0.75rem; color: #fff; margin-top: 4px; }
   </style>
-  <!-- React y Babel para JSX en la página estática -->
+  <!-- React and Babel for JSX on the static page -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/react-icons@4.3.1/dist/react-icons.umd.js"></script>
@@ -28,121 +28,102 @@
 </head>
 <body>
   <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#trayectoria">Trayectoria</a>
-     <a href="#tecnologia">Tecnología en Desarrollo</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#technology">Technology in Development</a>
     <a href="#videos">Videos</a>
-    <a href="#vision">Visión</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#vision">Vision</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <section id="inicio">
-    <h2>Bienvenido a Brain Inter Facez</h2>
-    <p>Soy Alejandro Rangel, desarrollador apasionado por la intersección entre neurociencia y tecnología. Mi misión es mejorar el mundo mediante soluciones innovadoras que fusionen mente y máquina.</p>
+  <section id="home">
+    <h2>Welcome to Brain Inter Facez</h2>
+    <p>I’m Alejandro Rangel, a developer passionate about the intersection of neuroscience and technology. My mission is to improve the world through innovative solutions that merge mind and machine.</p>
   </section>
 
-  <section id="trayectoria">
-    <h2>Mi Trayectoria</h2>
-    <p>Tras completar mi Maestría en Filosofía, descubrí mi verdadera pasión por la tecnología. Al mudarme a Irlanda, me sumergí en el potencial de la cibernética cerebral y decidí fundar Brain Inter Facez para aplicar mis conocimientos en neurociencia y tecnología.</p>
+  <section id="about">
+    <h2>My Journey</h2>
+    <p>After completing my Master’s in Philosophy, I discovered my true passion for technology. Upon moving to Ireland, I immersed myself in the potential of brain-computer interfaces and decided to found Brain Inter Facez to apply my knowledge in neuroscience and technology.</p>
   </section>
 
-
-
-<section id="tecnologia">
-  <h2>Tecnología en Desarrollo</h2>
-  <p>Actualmente estamos desarrollando nuevos sistemas para trabajar con el cerebro.</p>
-  
-  <div class="analyse" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-    
-    <figure style="max-width: 250px; text-align: center;">
-      <img src="images/bw1.png" alt="Prototipo 1" style="width: 100%; height: auto; border: 1px solid #000;" />
-      <figcaption>Prototipe 1</figcaption>
-    </figure>
-    
-    <figure style="max-width: 250px; text-align: center;">
-      <img src="images/bw2.png" alt="Prototipo 2" style="width: 100%; height: auto; border: 1px solid #000;" />
-      <figcaption>Prototipe 2</figcaption>
-    </figure>
-    
-  </div>
-
-   
-  <div class="hardware" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-    
-    <figure style="max-width: 250px; text-align: center;">
-      <img src="images/hat.png" alt="iLearn" style="width: 100%; height: auto; border: 1px solid #000;" />
-      <figcaption>iLearn</figcaption>
-    </figure>
-    
-    <figure style="max-width: 250px; text-align: center;">
-      <img src="images/models.png" alt="Prototipo 1" style="width: 100%; height: auto; border: 1px solid #000;" />
-      <figcaption>Prototipe 1</figcaption>
-    </figure>
-    
-    <figure style="max-width: 250px; text-align: center;">
-      <img src="images/tyara.png" alt="Prototipo 2" style="width: 100%; height: auto; border: 1px solid #000;" />
-      <figcaption>Prototipe 2</figcaption>
-    </figure>
-    
-  </div>
-
-   
-  <div class="servide" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-    
-    <figure style="max-width: 250px; text-align: center;">
-      <img src="images/ilearn.png" alt="iLearn" style="width: 100%; height: auto; border: 1px solid #000;" />
-      <figcaption>iLearn</figcaption>
-    </figure>
-    
-    <figure style="max-width: 250px; text-align: center;">
-      <img src="images/movie.png" alt="Prototipo 1" style="width: 100%; height: auto; border: 1px solid #000;" />
-      <figcaption>Prototipe 1</figcaption>
-    </figure>
-    
-  </div>
-</section>
-
+  <section id="technology">
+    <h2>Technology in Development</h2>
+    <p>We are currently developing new systems to work with the brain.</p>
+    <div class="analyse" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+      <figure style="max-width: 250px; text-align: center;">
+        <img src="images/bw1.png" alt="Prototype 1" style="width: 100%; height: auto; border: 1px solid #000;" />
+        <figcaption>Brain Wave Analysis 1</figcaption>
+      </figure>
+      <figure style="max-width: 250px; text-align: center;">
+        <img src="images/bw2.png" alt="Prototype 2" style="width: 100%; height: auto; border: 1px solid #000;" />
+        <figcaption>Brain Wave Analysis 2</figcaption>
+      </figure>
+    </div>
+    <div class="hardware" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+      <figure style="max-width: 250px; text-align: center;">
+        <img src="images/hat.png" alt="Prototype 1" style="width: 100%; height: auto; border: 1px solid #000;" />
+        <figcaption>Prototype 1</figcaption>
+      </figure>
+      <figure style="max-width: 250px; text-align: center;">
+        <img src="images/models.png" alt="Prototype 2" style="width: 100%; height: auto; border: 1px solid #000;" />
+        <figcaption>Prototype 2</figcaption>
+      </figure>
+      <figure style="max-width: 250px; text-align: center;">
+        <img src="images/tyara.png" alt="Prototype 3" style="width: 100%; height: auto; border: 1px solid #000;" />
+        <figcaption>Prototype 3</figcaption>
+      </figure>
+    </div>
+    <div class="service" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+      <figure style="max-width: 250px; text-align: center;">
+        <img src="images/ilearn.png" alt="iLearn" style="width: 100%; height: auto; border: 1px solid #000;" />
+        <figcaption>iLearn</figcaption>
+      </figure>
+      <figure style="max-width: 250px; text-align: center;">
+        <img src="images/movie.png" alt="Make Movies" style="width: 100%; height: auto; border: 1px solid #000;" />
+        <figcaption>Make Movies</figcaption>
+      </figure>
+    </div>
   </section>
 
-    <section id="videos">
-    <h2>Videos Destacados</h2>
+  <section id="videos">
+    <h2>Featured Videos</h2>
     <div class="video-container">
       <div>
-        <h3>Proceso de Machine Learning</h3>
+        <h3>Machine Learning Process</h3>
         <iframe src="https://www.youtube.com/embed/zS0e6jan25s" frameborder="0" allowfullscreen></iframe>
       </div>
       <div>
-        <h3>Análisis EEG Avanzado</h3>
+        <h3>Advanced EEG Analysis</h3>
         <iframe src="https://www.youtube.com/embed/XUQrZKiacMM" frameborder="0" allowfullscreen></iframe>
       </div>
       <div>
-        <h3>Summits de tecnologia </h3>
+        <h3>Technology Summits</h3>
         <iframe src="https://www.youtube.com/embed/12F4uXnWi2w?start=6" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </section>
-  
+
   <section id="vision">
-    <h2>Visión de Futuro</h2>
-    <p>Creemos en un futuro donde la neurotecnología potencie el aprendizaje humano, personalizando la educación y mejorando la calidad de vida de las personas.</p>
+    <h2>Vision for the Future</h2>
+    <p>We believe in a future where neurotechnology enhances human learning, personalizing education and improving quality of life.</p>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Puedes contactarme en <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank">LinkedIn</a>.</p>
-    <p>Gmail <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank">dev.alejandro5@gmail.com</a>.</p>
-    <p>Whatsapp <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank"></a>+353 838056299</p>
-    <p>Puedes contactarme en <a href="https://www.facebook.com/profile.php?id=61573186777310" target="_blank">Facebook</a>.</p>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me on <a href="https://www.linkedin.com/in/alejandro-rangel-62457815b/" target="_blank">LinkedIn</a>.</p>
+    <p>Email: dev.alejandro5@gmail.com</p>
+    <p>WhatsApp: +353 838056299</p>
+    <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61573186777310" target="_blank">Profile</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Brain Inter Facez - Alejandro Rangel</p>
   </footer>
 
-  <!-- Punto de montaje para el Dock -->
+  <!-- Dock mount point -->
   <div id="root"></div>
 
-  <!-- Script JSX para el Dock -->
+  <!-- JSX Script for Dock -->
   <script type="text/babel">
     const { VscHome, VscArchive, VscAccount, VscSettingsGear } = ReactIcons;
 
@@ -155,7 +136,7 @@
               className="dock-item"
               style={{ width: baseItemSize, height: baseItemSize }}
               onClick={item.onClick}
-              onMouseEnter={e => (e.currentTarget.style.transform = scale(${magnification / baseItemSize}))}
+              onMouseEnter={e => (e.currentTarget.style.transform = `scale(${magnification / baseItemSize})`)}
               onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
             >
               {item.icon}
@@ -168,10 +149,10 @@
 
     function App() {
       const items = [
-        { icon: <VscHome size={24} />, label: 'Inicio', onClick: () => window.location.href = '#inicio' },
-        { icon: <VscArchive size={24} />, label: 'Trayectoria', onClick: () => window.location.href = '#trayectoria' },
+        { icon: <VscHome size={24} />, label: 'Home', onClick: () => window.location.href = '#home' },
+        { icon: <VscArchive size={24} />, label: 'About', onClick: () => window.location.href = '#about' },
         { icon: <VscAccount size={24} />, label: 'Videos', onClick: () => window.location.href = '#videos' },
-        { icon: <VscSettingsGear size={24} />, label: 'Tecnología', onClick: () => window.location.href = '#tecnologia' }
+        { icon: <VscSettingsGear size={24} />, label: 'Technology', onClick: () => window.location.href = '#technology' }
       ];
       return <Dock items={items} panelHeight={68} baseItemSize={50} magnification={1.4} />;
     }
