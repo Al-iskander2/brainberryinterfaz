@@ -234,6 +234,18 @@
       align-items: center;
     }
 
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product-image:hover {
+      transform: translateY(-4px);
+    }
+
     .price-tag {
       font-size: 2.5rem;
       font-weight: 700;
@@ -449,6 +461,79 @@
       flex: 1;
     }
 
+    /* Science Section */
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .science-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .science-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+    }
+
+    .science-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .science-content {
+      padding: 1.5rem;
+    }
+
+    .science-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Coming Soon Section */
+    .coming-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .coming-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .coming-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .coming-icon {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin: 0 auto 1.5rem;
+      border-radius: 12px;
+      padding: 1rem;
+      background: var(--bg);
+    }
+
     /* Videos section */
     .video-grid {
       display: grid;
@@ -475,7 +560,7 @@
       border: none;
     }
 
-    /* Future & Coming Soon sections - más concisas */
+    /* Future Section */
     .future-content, .coming-soon-content {
       max-width: 800px;
       margin: 0 auto;
@@ -608,6 +693,10 @@
         grid-template-columns: 1fr;
       }
       
+      .science-grid, .coming-grid {
+        grid-template-columns: 1fr;
+      }
+      
       .profile-header {
         flex-direction: column;
         text-align: center;
@@ -661,6 +750,7 @@
         <a href="#home">Home</a>
         <a href="#product">Product</a>
         <a href="#team">Team</a>
+        <a href="#science">Science</a>
         <a href="#videos">Videos</a>
         <a href="#future">Future</a>
         <a href="#coming-soon">Soon</a>
@@ -692,6 +782,10 @@
       <h2>Prometeo Tiara — €149</h2>
       
       <div class="product-showcase">
+        <div>
+          <img src="images/products/tyara.png" alt="Prometeo Tiara EEG Headset" class="product-image">
+        </div>
+        
         <div class="card">
           <h3>Affordable Brain-Computer Interface</h3>
           <p>A comfortable, wearable EEG device to explore your brain activity, track focus, and experience new human-computer interactions.</p>
@@ -715,29 +809,30 @@
             Pre-sale WhatsApp: +353 089 970 3324
           </p>
         </div>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+        <div class="card">
+          <h3>Who is it for?</h3>
+          <p><strong>Students & Educators:</strong> Explore neuroscience and BCI technology in an accessible way.</p>
+          <p><strong>Developers & Researchers:</strong> Build applications and experiments with real EEG data.</p>
+          <p><strong>Creatives & Enthusiasts:</strong> Discover new ways to interact with technology using your mind.</p>
+        </div>
         
-        <div>
-          <div class="card">
-            <h3>Who is it for?</h3>
-            <p><strong>Students & Educators:</strong> Explore neuroscience and BCI technology in an accessible way.</p>
-            <p><strong>Developers & Researchers:</strong> Build applications and experiments with real EEG data.</p>
-            <p><strong>Creatives & Enthusiasts:</strong> Discover new ways to interact with technology using your mind.</p>
-          </div>
-          
-          <div class="card" style="margin-top: 1.5rem;">
-            <h3>What's included?</h3>
-            <p>• Prometeo Tiara EEG headset</p>
-            <p>• Access to our software platform</p>
-            <p>• Early community access</p>
-            <p>• Updates and new features</p>
-          </div>
+        <div class="card">
+          <h3>What's included?</h3>
+          <p>• Prometeo Tiara EEG headset</p>
+          <p>• Access to our software platform</p>
+          <p>• Early community access</p>
+          <p>• Updates and new features</p>
+          <p>• Educational materials</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Team Section - CON TARJETAS UI MEJORADAS -->
-  <section id="team" style="background: var(--bg);">
+  <section id="team">
     <div class="container">
       <h2>Our Team</h2>
       
@@ -861,8 +956,59 @@
     </div>
   </section>
 
+  <!-- Science Section -->
+  <section id="science" style="background: var(--bg-alt);">
+    <div class="container">
+      <h2>The Science Behind</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: var(--muted);">
+        Understanding brain waves and neural patterns that power the Prometeo Tiara technology.
+      </p>
+      
+      <div class="science-grid">
+        <div class="science-card">
+          <img src="images/science/bw1.png" alt="Brain Wave Analysis" class="science-image">
+          <div class="science-content">
+            <h3 class="science-title">Brain Wave Analysis</h3>
+            <p>Our technology analyzes different brain wave frequencies to understand cognitive states:</p>
+            <ul style="margin-top: 0.5rem; color: var(--muted);">
+              <li><strong>Alpha waves (8-12 Hz):</strong> Relaxed, meditative states</li>
+              <li><strong>Beta waves (12-30 Hz):</strong> Active thinking, focus</li>
+              <li><strong>Theta waves (4-8 Hz):</strong> Creativity, deep meditation</li>
+              <li><strong>Delta waves (0.5-4 Hz):</strong> Deep sleep, healing</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="science-card">
+          <img src="images/science/bw2.png" alt="EEG Signal Processing" class="science-image">
+          <div class="science-content">
+            <h3 class="science-title">EEG Signal Processing</h3>
+            <p>Advanced signal processing techniques clean and interpret EEG data:</p>
+            <ul style="margin-top: 0.5rem; color: var(--muted);">
+              <li>Noise reduction algorithms for clean signals</li>
+              <li>Real-time Fourier transforms for frequency analysis</li>
+              <li>Machine learning classification of mental states</li>
+              <li>Pattern recognition for user-specific calibration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" style="margin-top: 3rem; text-align: center;">
+        <h3>Neuroscience Research</h3>
+        <p>We collaborate with neuroscientists and researchers to validate our technology and contribute to the field of accessible neurotech.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="https://wa.me/353899703324?text=Hi,%20I'm%20interested%20in%20the%20science%20behind%20Prometeo%20Tiara" 
+             target="_blank" class="btn btn-primary">
+            Discuss Research Opportunities
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Videos Section -->
-  <section id="videos" style="background: var(--bg-alt);">
+  <section id="videos">
     <div class="container">
       <h2>Featured Videos</h2>
       
@@ -890,8 +1036,8 @@
     </div>
   </section>
 
-  <!-- Future Section - más concisa -->
-  <section id="future">
+  <!-- Future Section -->
+  <section id="future" style="background: var(--bg-alt);">
     <div class="container">
       <h2>The Future We See</h2>
       
@@ -903,32 +1049,46 @@
           <li><strong>Mental Wellness Tools:</strong> Accessible meditation and focus training</li>
           <li><strong>Creative Expression:</strong> Brain activity as input for art and music</li>
           <li><strong>Democratized Technology:</strong> Affordable tools for everyone</li>
+          <li><strong>Research Collaboration:</strong> Partnering with universities and labs</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Coming Soon - más concisa -->
-  <section id="coming-soon" style="background: var(--bg-alt);">
+  <!-- Coming Soon Section -->
+  <section id="coming-soon">
     <div class="container">
       <h2>Coming Soon</h2>
       
-      <div class="coming-soon-content">
-        <p>We're building the future of accessible neurotechnology:</p>
-        
-        <ul class="coming-list">
-          <li>New software dashboard for brain activity visualization</li>
-          <li>Developer SDK for building applications</li>
-          <li>Educational content on neuroscience and BCI</li>
-          <li>Hardware upgrades and new form factors</li>
-        </ul>
-        
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="https://wa.me/353899703324?text=Hi%2C%20I%20want%20to%20join%20the%20early%20community%20and%20get%20updates%20on%20new%20features." 
-             target="_blank" class="btn btn-primary">
-            Join Early Community
-          </a>
+      <div class="coming-grid">
+        <div class="coming-card">
+          <img src="images/Comming_soon/hat.png" alt="New Hat Design" class="coming-icon">
+          <h3>New Hardware Design</h3>
+          <p>Updated form factor with improved comfort and additional sensors for better signal quality.</p>
         </div>
+        
+        <div class="coming-card">
+          <img src="images/Comming_soon/ilearn.png" alt="Interactive Learning" class="coming-icon">
+          <h3>Interactive Learning Platform</h3>
+          <p>Educational content and interactive exercises to learn neuroscience and BCI programming.</p>
+        </div>
+        
+        <div class="coming-card">
+          <img src="images/Comming_soon/movie.png" alt="Media Control" class="coming-icon">
+          <h3>Media Control Application</h3>
+          <p>Control videos, music, and presentations using your focus and attention levels.</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="max-width: 700px; margin: 0 auto 1.5rem; color: var(--muted);">
+          We're continuously developing new features and applications for the Prometeo Tiara.
+          Join our early community to get updates and influence our development roadmap.
+        </p>
+        <a href="https://wa.me/353899703324?text=Hi%2C%20I%20want%20to%20join%20the%20early%20community%20and%20get%20updates%20on%20new%20features." 
+           target="_blank" class="btn btn-primary">
+          Join Early Community
+        </a>
       </div>
     </div>
   </section>
@@ -942,6 +1102,7 @@
         <a href="#home">Home</a>
         <a href="#product">Product</a>
         <a href="#team">Team</a>
+        <a href="#science">Science</a>
         <a href="#videos">Videos</a>
         <a href="#future">Future</a>
         <a href="#coming-soon">Soon</a>
@@ -950,6 +1111,7 @@
       <div class="copyright">
         <p>&copy; 2025 Anticipation Technology</p>
         <p>Prometeo Tiara — €149 Pre-sale Available</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Dublin, Ireland | +353 089 970 3324</p>
       </div>
     </div>
   </footer>
@@ -972,13 +1134,13 @@
       <span style="font-size: 1.2rem;">🧠</span>
       <span>Product</span>
     </a>
-    <a href="#videos" class="dock-item">
-      <span style="font-size: 1.2rem;">🎬</span>
-      <span>Videos</span>
-    </a>
     <a href="#team" class="dock-item">
       <span style="font-size: 1.2rem;">👥</span>
       <span>Team</span>
+    </a>
+    <a href="#science" class="dock-item">
+      <span style="font-size: 1.2rem;">🔬</span>
+      <span>Science</span>
     </a>
   </div>
 
