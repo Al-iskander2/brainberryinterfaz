@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anticipation – Prometeo Tiara</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      /* Paleta Anticipation simplificada */
+      --brand: #204070;        /* Azul principal */
+      --brand-soft: #486898;   /* Azul suave */
+      --accent-mint: #57E0C8;  /* Confirmar / CTA principal */
+      --accent-magenta: #FA41B8; /* Deny / secundario */
+      --bg: #F9FAFB;           /* Fondo principal claro */
+      --bg-alt: #F3F4F6;       /* Sección alterna */
+      --text: #111827;         /* Texto principal */
+      --muted: #6B7280;        /* Texto secundario */
+      --border: #E5E7EB;       /* Bordes */
+      
+      /* Sombra suave */
+      --shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Tipografía limpia */
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--brand);
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--brand-soft);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--brand);
+    }
+
+    /* Navbar simple y limpia */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    /* Clase de tarjeta unificada */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Contenedor principal */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* Hero minimalista */
+    #home {
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+      text-align: center;
+      background: var(--bg);
+    }
+
+    .logo-wrap {
+      margin-bottom: 2rem;
+    }
+
+    .logo-main {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .logo-sub {
+      font-size: 3rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    /* Botones simplificados */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.75rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent-mint);
+      color: #053C33;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(87, 224, 200, 0.25);
+    }
+
+    .btn-secondary {
+      background: var(--brand-soft);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: var(--brand);
+    }
+
+    /* Product section */
+    .product-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .price-tag {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--brand);
+      margin: 1.5rem 0;
+    }
+
+    .product-features {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .product-features li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .product-features li:before {
+      content: "✓";
+      color: var(--accent-mint);
+      font-weight: bold;
+    }
+
+    /* Team section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-role {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .team-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    /* Videos section */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--bg);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Future & Coming Soon sections - más concisas */
+    .future-content, .coming-soon-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .future-list, .coming-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .future-list li, .coming-list li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .future-list li:before, .coming-list li:before {
+      content: "•";
+      color: var(--accent-mint);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* Contact section */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* Footer simple */
+    footer {
+      background: var(--brand);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .footer-logo {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+
+    /* WhatsApp button - simple y limpio */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      color: white;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+      z-index: 100;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Dock solo en móvil */
+    #dock {
+      display: none;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .product-showcase {
+        grid-template-columns: 1fr;
+      }
+      
+      section {
+        padding: 3rem 0;
+      }
+      
+      #home {
+        padding-top: 6rem;
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+      
+      /* Mostrar dock solo en móvil */
+      #dock {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 0.75rem 1rem;
+        justify-content: space-around;
+        z-index: 100;
+      }
+      
+      .dock-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 0.75rem;
+        gap: 0.25rem;
+      }
+      
+      .dock-item.active {
+        color: var(--brand);
+      }
+      
+      .whatsapp-float {
+        bottom: 5rem;
+        right: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar limpia -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">ANTICIPATION</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#product">Product</a>
+        <a href="#team">Team</a>
+        <a href="#videos">Videos</a>
+        <a href="#future">Future</a>
+        <a href="#coming-soon">Soon</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero minimalista -->
+  <section id="home">
+    <div class="container">
+      <div class="logo-wrap">
+        <div class="logo-main">ANTICIPATION</div>
+        <div class="logo-sub">TECHNOLOGY</div>
+      </div>
+      
+      <p class="hero-tagline">Making neurotechnology accessible with the Prometeo Tiara — an affordable EEG headset for exploring brain-computer interfaces.</p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#product" class="btn btn-primary">Explore Prometeo Tiara</a>
+        <a href="https://wa.me/353899703324?text=Hi%2C%20I%20want%20to%20pre-order%20the%20Prometeo%20Tiara%20for%20%E2%82%AC149." 
+           target="_blank" class="btn btn-secondary">Pre-order via WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section id="product" style="background: var(--bg-alt);">
+    <div class="container">
+      <h2>Prometeo Tiara — €149</h2>
+      
+      <div class="product-showcase">
+        <div class="card">
+          <h3>Affordable Brain-Computer Interface</h3>
+          <p>A comfortable, wearable EEG device to explore your brain activity, track focus, and experience new human-computer interactions.</p>
+          
+          <div class="price-tag">€149</div>
+          
+          <ul class="product-features">
+            <li>Real-time brain wave monitoring</li>
+            <li>Comfortable tiara design</li>
+            <li>Focus and meditation tracking</li>
+            <li>Wireless Bluetooth connectivity</li>
+            <li>Early access to new features</li>
+          </ul>
+          
+          <a href="https://wa.me/353899703324?text=Hi%2C%20I%20want%20to%20pre-order%20the%20Prometeo%20Tiara%20for%20%E2%82%AC149." 
+             target="_blank" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            Pre-order via WhatsApp
+          </a>
+          
+          <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+            Pre-sale WhatsApp: +353 089 970 3324
+          </p>
+        </div>
+        
+        <div>
+          <div class="card">
+            <h3>Who is it for?</h3>
+            <p><strong>Students & Educators:</strong> Explore neuroscience and BCI technology in an accessible way.</p>
+            <p><strong>Developers & Researchers:</strong> Build applications and experiments with real EEG data.</p>
+            <p><strong>Creatives & Enthusiasts:</strong> Discover new ways to interact with technology using your mind.</p>
+          </div>
+          
+          <div class="card" style="margin-top: 1.5rem;">
+            <h3>What's included?</h3>
+            <p>• Prometeo Tiara EEG headset</p>
+            <p>• Access to our software platform</p>
+            <p>• Early community access</p>
+            <p>• Updates and new features</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team">
+    <div class="container">
+      <h2>Our Team</h2>
+      
+      <div class="team-grid">
+        <div class="card">
+          <div class="team-role">CEO & Founder</div>
+          <div class="team-name">Alejandro Rangel</div>
+          <p>Philosopher and developer passionate about the intersection of mind, learning and technology. Leads product vision and research.</p>
+        </div>
+        
+        <div class="card">
+          <div class="team-role">Software & ML</div>
+          <div class="team-name">Development Team</div>
+          <p>Building the signal processing pipelines, machine learning algorithms, and interactive applications that power the Prometeo Tiara.</p>
+        </div>
+        
+        <div class="card">
+          <div class="team-role">Growth & Community</div>
+          <div class="team-name">Marketing Team</div>
+          <p>Connecting with early adopters, educators, and creators to build a community around accessible neurotechnology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section id="videos" style="background: var(--bg-alt);">
+    <div class="container">
+      <h2>Featured Videos</h2>
+      
+      <div class="video-grid">
+        <div>
+          <h3>First Introduction</h3>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/qDZnmS2xKdE" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div>
+          <h3>Power Demonstration</h3>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/8OhwLj9cVKc" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="https://www.youtube.com/@AnticipationTechnology" target="_blank" class="btn btn-secondary">
+          View More Videos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Section - más concisa -->
+  <section id="future">
+    <div class="container">
+      <h2>The Future We See</h2>
+      
+      <div class="future-content">
+        <p>We believe neurotechnology should be accessible, ethical, and empowering. Our vision:</p>
+        
+        <ul class="future-list">
+          <li><strong>Personalized Learning:</strong> Adapt content based on cognitive engagement</li>
+          <li><strong>Mental Wellness Tools:</strong> Accessible meditation and focus training</li>
+          <li><strong>Creative Expression:</strong> Brain activity as input for art and music</li>
+          <li><strong>Democratized Technology:</strong> Affordable tools for everyone</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon - más concisa -->
+  <section id="coming-soon" style="background: var(--bg-alt);">
+    <div class="container">
+      <h2>Coming Soon</h2>
+      
+      <div class="coming-soon-content">
+        <p>We're building the future of accessible neurotechnology:</p>
+        
+        <ul class="coming-list">
+          <li>New software dashboard for brain activity visualization</li>
+          <li>Developer SDK for building applications</li>
+          <li>Educational content on neuroscience and BCI</li>
+          <li>Hardware upgrades and new form factors</li>
+        </ul>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="https://wa.me/353899703324?text=Hi%2C%20I%20want%20to%20join%20the%20early%20community%20and%20get%20updates%20on%20new%20features." 
+             target="_blank" class="btn btn-primary">
+            Join Early Community
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">ANTICIPATION</div>
+      
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#product">Product</a>
+        <a href="#team">Team</a>
+        <a href="#videos">Videos</a>
+        <a href="#future">Future</a>
+        <a href="#coming-soon">Soon</a>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Anticipation Technology</p>
+        <p>Prometeo Tiara — €149 Pre-sale Available</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a class="whatsapp-float" 
+     href="https://wa.me/353899703324?text=Hi%2C%20I%20am%20interested%20in%20the%20Prometeo%20Tiara%20pre-sale." 
+     target="_blank" 
+     aria-label="Contact us on WhatsApp">
+    💬
+  </a>
+
+  <!-- Dock solo para móvil -->
+  <div id="dock">
+    <a href="#home" class="dock-item">
+      <span style="font-size: 1.2rem;">🏠</span>
+      <span>Home</span>
+    </a>
+    <a href="#product" class="dock-item">
+      <span style="font-size: 1.2rem;">🧠</span>
+      <span>Product</span>
+    </a>
+    <a href="#videos" class="dock-item">
+      <span style="font-size: 1.2rem;">🎬</span>
+      <span>Videos</span>
+    </a>
+    <a href="#contact" class="dock-item">
+      <span style="font-size: 1.2rem;">📞</span>
+      <span>Contact</span>
+    </a>
+  </div>
+
+  <!-- Simple JS para el dock -->
+  <script>
+    // Highlight active dock item
+    document.addEventListener('DOMContentLoaded', function() {
+      const dockItems = document.querySelectorAll('.dock-item');
+      
+      function updateActiveDockItem() {
+        const sections = document.querySelectorAll('section');
+        let currentSectionId = '';
+        
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSectionId = section.id;
+          }
+        });
+        
+        dockItems.forEach(item => {
+          const href = item.getAttribute('href').substring(1);
+          if (href === currentSectionId) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+      
+      // Solo si el dock está visible
+      if (window.innerWidth <= 768) {
+        window.addEventListener('scroll', updateActiveDockItem);
+        updateActiveDockItem(); // Inicial
+      }
+    });
+  </script>
+</body>
+</html>
